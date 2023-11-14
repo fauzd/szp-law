@@ -1,0 +1,117 @@
+.services-details {
+  min-height: 100vh;
+  padding-top: 4rem;
+  padding-top: clamp(4.5rem, 10vw, 4rem);
+  &__about {
+    padding-bottom: 3rem;
+  }
+  &__title {
+    border-bottom: 2px solid $accent;
+    padding-bottom: 1.8rem;
+    padding-bottom: clamp(1rem, 5vw, 1.8rem);
+
+  }
+  &__description {
+    padding-bottom: 3rem;
+    &-wrapper {
+      display: flex;
+      gap: 4rem;
+      gap: clamp(1rem, 10vw, 4rem);
+      flex-wrap: wrap;
+    }
+    &-column {
+      flex: 1 1 300px;
+    }
+    &-title {
+      padding-top: 1.8rem;
+      padding-top: clamp(1rem, 4vw, 1.8rem);
+      padding-bottom: 1rem;
+    }
+    &-list {
+      @media (max-width: 640px) {
+        padding-left: 1rem;
+      }
+    }
+    &-list ul li {
+      list-style: disc;
+    }
+    &-list ul li li {
+      list-style: circle;
+      margin-left: 1rem;
+    }
+  }
+  &__lawyer {
+    padding-top: 3rem;
+    padding-top: clamp(1rem, 5vw, 3rem);
+    &-wrapper {
+      display: flex;
+      gap: 3rem;
+      gap: clamp(1rem, 5vw, 3rem);
+      flex-wrap: wrap;
+      padding-bottom: 3.875rem;
+      padding-bottom: clamp(1rem, 5vw, 3.875rem);
+      &-child {
+        flex: 1 1 200px;
+      }
+    }
+    &-title {
+      padding-bottom: 2rem;
+      padding-bottom: clamp(1rem, 5vw, 2rem);
+      border-bottom: 2px solid $accent;
+    }
+    &-name {
+      padding-top: 2rem;
+      padding-top: clamp(1rem, 5vw, 2rem);
+      padding-bottom: 2rem;
+      padding-bottom: clamp(1rem, 5vw, 2rem);
+    }
+    &-photo {
+      border-radius: 13px;
+      max-height: 98vh;
+      max-width: 90vw;
+      aspect-ratio: 697/754;
+  object-fit: cover;
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+  &__cases {
+    background-color: $white;
+    padding-top: 4rem;
+    padding-top: clamp(1rem, 5vw, 4rem);
+    padding-bottom: 6.25rem;
+    padding-bottom: clamp(1rem, 8vw, 6.25rem);
+    &-title {
+      padding-bottom: 1rem;
+      border-bottom: 2px solid $accent;
+    }
+    &-wrapper {
+      padding-top: 4rem;
+      padding-top: clamp(1rem, 5vw, 4rem);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: stretch;
+      &-child {
+        flex: 1 1 calc(50% - 20px);
+      }
+    }
+  }
+  &__case {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &-btn {
+      background-color: transparent;
+      border: 1px solid $accent;
+      margin-top: auto;
+      color: $dark;
+      &:hover {
+        background-color: $accent;
+        color: $white;
+      }
+    }
+  }
+}

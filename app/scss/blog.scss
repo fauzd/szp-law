@@ -1,0 +1,86 @@
+.blog {
+  &-hero {
+    position: relative;
+    height: 90vh;
+    @media (max-width: 640px) {
+      height: auto;
+    }
+  }
+  &__content {
+    min-height: 90vh;
+    padding-top: 4rem;
+    padding-top: clamp(1rem, 5vw, 4rem);
+    padding-bottom: 4rem;
+    padding-bottom: clamp(1rem, 5vw, 4rem);
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    @media (max-width: 640px) {
+      padding-bottom: .5rem;
+    }
+    &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    @include border-bottom;
+    &-child {
+      flex: 1 1 50%;
+    }
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  }
+  &__filter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    gap: clamp(.5rem, 1.25vw, 1rem);
+    &-link {
+      background: transparent;
+      color: $dark;
+      @include border;
+      white-space: nowrap;
+      &--active,
+      &:hover {
+        background-color: $accent;
+        color: $white;
+      }
+      &--active:hover {
+        background: transparent;
+        color: $dark;
+      }
+      @media (max-width: 640px) {
+      padding: .25rem .5rem;
+      font-size: .75rem;
+    }
+    }
+  }
+  &__swiper-wrapper {
+    display: flex;
+    padding-top: 2.5rem;
+    gap: 1rem;
+    @media (min-width: 641px) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      & > * {
+        flex: 1 1 max(300px, calc(33.33% - 1rem));
+      }
+    }
+    @media (max-width: 640px) {
+      flex-direction: column;
+    }
+  }
+  &__btn {
+    padding: .5rem 2rem;
+    margin-top: 4rem;
+    margin-top: clamp(1rem, 5vw, 4rem);
+    align-self: center;
+  }
+}

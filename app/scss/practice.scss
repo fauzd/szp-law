@@ -1,0 +1,117 @@
+.practice {
+  &-hero {
+    position: relative;
+    height: 90vh;
+    @media (max-width: 640px) {
+      height: auto;
+    }
+  }
+  &-filter {
+    padding-top: 5rem;
+    padding-top: clamp(2rem, 7vw, 5rem);
+    padding-bottom: 5rem;
+    padding-bottom: clamp(2rem, 5vw, 5rem);
+    background-color: $white;
+    &__title {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      @include border-bottom;
+    }
+    &__list {
+      columns: 2;
+      column-gap: 1rem;
+      @include practice-filter-list;
+      @media (max-width: 640px) {
+        columns: 1;
+      }
+    }
+    &__item {
+      break-before: column;
+      &-wide {
+        column-span: all;
+      }
+      &:last-child {
+        border-bottom: 1px solid $accent;
+      }
+    }
+  }
+}
+
+.section-case {
+  background-color: $white;
+}
+.case {
+  padding: 1.5rem;
+  padding: clamp(.75rem, 4vw, 1.5rem);
+  @include border;
+  border-radius: 13px;
+  background-color: $light;
+  &__wrapper {
+    padding-bottom: 4rem;
+    padding-bottom: clamp(2rem, 8vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2.7rem;
+    gap: clamp(1rem, 5vw, 2.7rem);
+  }
+  &__number {
+    margin-bottom: 0.8rem;
+    margin-bottom: clamp(.5rem, 2vw, .8rem);
+  }
+  &__title {
+    @include border-bottom;
+    padding-bottom: 1rem;
+    padding-bottom: clamp(.5rem, 1vw, 1rem);
+    margin-bottom: 1rem;
+    margin-bottom: clamp(.5rem, 1vw, 1rem);
+    @media (max-width: 640px) {
+      font-size: 29px;
+      line-height: 100%;
+      padding-bottom: 20px;
+    }
+  }
+  &-details {
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      &-child {
+        flex: 1;
+      }
+      @media (max-width: 640px) {
+        flex-direction: column;
+      }
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    &__description {
+      &-text {
+        @include case-main;
+      }
+    }
+  }
+  &-metric {
+    &__name {
+      @include case-metric-name;
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+    &__value {
+      @include case-metric-value;
+      font-size: 1.56rem;
+      line-height: 2rem;
+      &--not-bold {
+        font-weight: 400;
+        font-size: 1rem;
+      }
+    }
+  }
+  &__btn {
+    align-self: center;
+  }
+}

@@ -1,0 +1,188 @@
+@mixin manrope {
+  font-family: 'Manrope', monospace;
+  font-style: normal;
+  font-weight: 400;
+}
+@mixin manropeBold {
+  font-family: 'Manrope', monospace;
+  font-style: normal;
+  font-weight: 700;
+}
+@mixin cormorant {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 400;
+}
+@mixin cormorantSC {
+  font-family: 'CormorantSC';
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+@mixin hero-title {
+  @include cormorantSC;
+  font-size: 3.5rem;
+  font-size: clamp(3.5rem, 10vw, 5.5rem);
+  line-height: 5rem;
+  line-height: clamp(3rem, 7vw, 5rem);
+  color: $light;
+}
+
+@mixin hero-subtitle {
+  @include cormorant;
+  font-size: 2rem;
+  font-size: clamp(1.5rem, 7vw, 2rem);
+  line-height: 4rem;
+  color: $light;
+}
+
+@mixin nav {
+  @include manrope;
+  font-size: .65rem;
+  font-size: .75rem;
+  // line-height: 3.75rem;
+  line-height: 1rem;
+  letter-spacing: -.02rem;
+}
+
+@mixin title {
+  @include cormorant;
+  font-size: 3rem;
+  font-size: clamp(2.5rem, 10vw, 3rem);
+  line-height: 100%;
+}
+
+@mixin services-list {
+  @include manrope;
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+
+@mixin cases-slide {
+  @include cormorant;
+  font-size: 2.6rem;
+  font-size: clamp(2.6rem, 10vw, 3.75rem);
+  line-height: 105%;
+}
+
+@mixin cases-description {
+  @include manrope;
+  font-size: 1rem;
+  line-height: 113.5%;
+}
+
+@mixin btn {
+  @include manrope;
+  font-size: 1.25rem;
+  font-size: clamp(18px, 1.25vw, 24px);
+  text-align: center;
+  letter-spacing: -0.69%;
+}
+
+@mixin news-swiper {
+  @include manrope;
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+@mixin credits {
+  @include manrope;
+  font-size: 0.75rem;
+  line-height: 110%;
+  letter-spacing: -.02rem;
+}
+
+@mixin main-text {
+  @include manrope;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -.0175rem;
+  color: $dark;
+}
+
+@mixin main-text-light {
+  @include manrope;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -.0175rem;
+  color: $light;
+}
+
+@mixin about-swiper-descr {
+  @include manrope;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  letter-spacing: -.0175rem;
+  color: $dark;
+}
+
+@mixin about-swiper-btn {
+  @include manrope;
+  font-size: 1rem;
+  line-height: 2rem;
+  letter-spacing: -.03rem;
+  color: $dark;
+}
+@mixin practice-filter-list {
+  @include manrope;
+  font-size: 1rem;
+  // line-height: 3rem;
+  // line-height: clamp(120%, 7vw, 3rem);
+  line-height: 100%;
+  letter-spacing: -.0175rem;
+  color: $dark;
+}
+
+@mixin case-main {
+  @include manrope;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -.0175rem;
+  color: $dark;
+}
+
+@mixin subtitle {
+  @include cormorant;
+  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 112%;
+  letter-spacing: -1.5%;
+  color: $accent;
+}
+
+@mixin case-metric-name {
+  @include manrope;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: -.013rem;
+  color: $dark;
+}
+
+@mixin case-metric-value {
+  @include manropeBold;
+  font-size: 1.175rem;
+  line-height: 1.5rem;
+  letter-spacing: -.0175rem;
+  color: $accent;
+}
+
+@mixin lawyer-job-title {
+  @include cormorant;
+  font-size: 2rem;
+  font-size: clamp(1.85rem, 2.5vw, 2rem);
+  letter-spacing: -1.5%;
+  color: $dark;
+}
+
+@mixin border-bottom {
+  border-bottom: clamp(1px, 0.15625vw, 2px) solid $accent;
+}
+
+@mixin border {
+  border: clamp(1px, 0.15625vw, 2px) solid $accent;
+}
+
+@mixin border-bottom-dark {
+  border-bottom: clamp(1px, 0.15625vw, 2px) solid $dark;
+}

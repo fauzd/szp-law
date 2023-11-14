@@ -1,0 +1,149 @@
+<!--=include header.html -->
+
+<main>
+  <section class="hero">
+    <picture>
+      <source media="(max-width: 1280px)"
+        srcset="images/hero-bg-img@3x.avif 3x, images/hero-bg-img@2x.avif 2x, images/hero-bg-img.avif 1x"
+        type="image/avif">
+      <source media="(max-width: 1280px)"
+        srcset="images/hero-bg-img@3x.webp 3x, images/hero-bg-img@2x.webp 2x, images/hero-bg-img.webp 1x"
+        type="image/webp">
+
+      <source srcset="images/hero-bg-img@3x.avif 3x, images/hero-bg-img@2x.avif 2x, images/hero-bg-img.avif 1x"
+        type="image/avif">
+      <source srcset="images/hero-bg-img@3x.webp 3x, images/hero-bg-img@2x.webp 2x, images/hero-bg-img.webp 1x"
+        type="image/webp">
+
+      <img class="hero__bg-img bg-img" src="images/hero-bg-img.png" alt="Гимназия заглавное фото">
+    </picture>
+    <div class="hero__bg-decor-wrapper">
+      <object id="index-hero-lg" class="hero__bg-decor hero__bg-decor-lg" type="image/svg+xml"
+        data="images/hero-bg-decor.svg"></object>
+      <object id="index-hero-sm" class="hero__bg-decor hero__bg-decor-sm" type="image/svg+xml"
+        data="images/hero-bg-decor-sm.svg"></object>
+    </div>
+    <div class="container hero__container">
+      <div class="hero__content-wrapper">
+        <h1 class="hero__title">
+          <span class="hero__title-1row">Доверять,</span>
+          <span class="hero__title-2row">когда</span>
+          <span class="hero__title-3row">это важно</span>
+        </h1>
+        <!-- <a href="#" class="hero__subtitle">О нас</a> -->
+      </div>
+    </div>
+  </section>
+  <section class="index-services">
+    <div class="container index-services__container">
+      <div class="index-services__practices index-services__child">
+        <h2 class="index-services__practices-title title practice-list__title">Практики</h2>
+        <ul class="index-services__list practice-list">
+          <li class="index-services__item practice-list__item"><a href="#"
+              class="index-services__link practice-list__link">Разрешение арбитражных споров</a></li>
+          <li class="index-services__item practice-list__item"><a href="#"
+              class="index-services__link practice-list__link">Разрешение трудовых споров и кадровый аудит</a>
+          </li>
+          <li class="index-services__item practice-list__item"><a href="#"
+              class="index-services__link practice-list__link">Юридическое обслуживание</a></li>
+          <li class="index-services__item practice-list__item"><a href="#"
+              class="index-services__link practice-list__link">Уголовно-правовая защита бизнеса</a></li>
+          <li class="index-services__item practice-list__item"><a href="#"
+              class="index-services__link practice-list__link">Исполнительное производство</a></li>
+        </ul>
+      </div>
+      <div class="index-services__cases index-services__child">
+        <h2 class="index-services__cases-title title">Дела</h2>
+        <div class="index-services__cases-swiper swiper-container">
+          <div class="swiper-wrapper">
+            <div class="index-services__cases-slide swiper-slide ">
+              <h3 class="index-services__cases-slide-title">ч. 4 ст. 159 УК РФ</h3>
+              <p class="index-services__cases-slide-description">Освобождение клиента
+                из-под стражи в зале суда</p>
+              <button class="index-services__cases-slide-btn btn">Подробнее</button>
+            </div>
+            <div class="index-services__cases-slide swiper-slide ">
+              <h3 class="index-services__cases-slide-title">₽ 30 000 000 000</h3>
+              <p class="index-services__cases-slide-description">Защита частного лица по уголовному делу</p>
+              <button class="index-services__cases-slide-btn btn">Подробнее</button>
+            </div>
+            <div class="index-services__cases-slide swiper-slide ">
+              <h3 class="index-services__cases-slide-title">₽ 370 000 000</h3>
+              <p class="index-services__cases-slide-description">Спор строительной компании с АО Корпорация «Трансстрой»
+              </p>
+              <button class="index-services__cases-slide-btn btn">Подробнее</button>
+            </div>
+          </div>
+          <div class="index-services__cases-pagination swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="news">
+    <div class="container news__container swiper__container">
+      <h2 class="news__title title swiper__title">Новости из блога</h2>
+      <div class="news__swiper swiper">
+        <div class="news__swiper-wrapper swiper-wrapper">
+          <div class="news__swiper-slide swiper-slide slide">
+            <div class="news__slide-wrapper slide-wrapper">
+              <div class="news__slide-date slide-date">11/04/2023</div>
+              <p class="news__slide-text slide-text">Таганский суд Москвы удовлетворил требование защиты о признании
+                обыска
+                незаконным</p>
+              <button class="news__slide-btn btn slide-btn">Подробнее</button>
+            </div>
+          </div>
+          <div class="news__swiper-slide swiper-slide slide">
+            <div class="news__slide-wrapper slide-wrapper">
+              <div class="news__slide-date slide-date">10/04/2023</div>
+              <p class="news__slide-text slide-text">ИД «КоммерсантЪ» снова отметил SZP Law Boutique среди лучших
+                юридических фирм
+                России</p>
+              <button class="news__slide-btn btn slide-btn">Подробнее</button>
+            </div>
+          </div>
+          <div class="news__swiper-slide swiper-slide slide">
+            <div class="news__slide-wrapper slide-wrapper">
+              <div class="news__slide-date slide-date">29/03/2023</div>
+              <p class="news__slide-text slide-text">Доверитель освобожден из-под стражи в зале суда</p>
+              <button class="news__slide-btn btn slide-btn">Подробнее</button>
+            </div>
+          </div>
+          <div class="news__swiper-slide swiper-slide slide">
+            <div class="news__slide-wrapper slide-wrapper">
+              <div class="news__slide-date slide-date">02/01/2020</div>
+              <p class="news__slide-text slide-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perspiciatis
+                asperiores vel necessitatibus architecto velit sit accusamus quisquam maiores facere voluptate, itaque,
+                error, nihil fuga quasi. At consequuntur dignissimos accusamus delectus!</p>
+              <button class="news__slide-btn btn slide-btn">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="news__swiper-button-prev swiper-button-prev"></div>
+      <div class="news__swiper-button-next swiper-button-next"></div>
+    </div>
+  </section>
+  <section class="recommendations">
+    <object id="index-recommendations__bg" class="recommendations__bg" type="image/svg+xml"
+      data="images/recommendations-bg.svg"></object>
+    <div class="container recommendations__container recommendations__swiper">
+      <h2 class="recommendations__title title">Мы рекомендованы рейтингами:</h2>
+      <div class="recommendations__content swiper-wrapper">
+        <div class="recommendations-slide swiper-slide"><img src="images/recommendations-logo-1.svg" alt=""
+            class="recommendations__logo "></div>
+        <div class="recommendations-slide swiper-slide"><img src="images/recommendations-logo-2.svg" alt=""
+            class="recommendations__logo"></div>
+        <div class="recommendations-slide swiper-slide"><img src="images/recommendations-logo-3.svg" alt=""
+            class="recommendations__logo"></div>
+        <div class="recommendations-slide swiper-slide"><img src="images/recommendations-logo-4.svg" alt=""
+            class="recommendations__logo"></div>
+        <div class="recommendations-slide swiper-slide"><img src="images/recommendations-logo-5.svg" alt=""
+            class="recommendations__logo"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--=include footer.html -->
