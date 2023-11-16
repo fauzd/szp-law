@@ -43,6 +43,9 @@
       padding-top: 1rem;
       padding-top: clamp(0.1rem, 1vw, 2rem);
       max-width: 90vw;
+      & > * {
+        @include main-text;
+      }
     }
     $img-max-width: 506px;
     $img-max-height: 759px;
@@ -93,6 +96,8 @@
       }
     }
     &-item {
+      opacity: 0;
+      
       $padding-left-max: 4rem;
       position: relative;
       padding-left: $padding-left-max;

@@ -44,6 +44,10 @@ button {
   color: $dark;
 }
 
+.animate-title {
+  opacity: 0;
+}
+
 .subtitle {
   @include subtitle;
 }
@@ -64,9 +68,9 @@ br {
   align-self: flex-start;
   color: $white;
   @include border;
+  transition: background 0.5s, color 0.5s;
   &:hover {
     background: transparent;
-
     color: $dark;
   }
 }
@@ -107,6 +111,7 @@ br {
   }
   &-button-prev,
   &-button-next {
+    overflow: hidden;
     width: 34px;
     width: clamp(34px, 7vw, 84px);
     height: 34px;
@@ -179,9 +184,43 @@ br {
 }
 
 .nav {
+  &__link {
+    display: inline-block;
+    position: relative;
+    line-height: 1.25rem;
+    height: 1.25rem;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      height: clamp(1px, 1vw, 2px);
+      background: $accent;
+      top: 100%;
+      left: 0;
+      pointer-events: none;
+      transform-origin: 100% 50%;
+      transform: scale3d(0, 1, 1);
+      transition: transform 0.3s;
+    }
+    &:hover::before {
+      transform-origin: 0% 50%;
+      transform: scale3d(1, 1, 1);
+    }
+  }
   &__item {
     color: $light;
     @include nav;
+    &-text {
+      display: block;
+      transition: transform 0.3s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+    }
+    &-clone {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      transition: transform 0.3s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+    }
   }
 }
 
@@ -443,6 +482,7 @@ br {
 .hero {
   position: relative;
   height: 90vh;
+  overflow: hidden;
   &__bg {
     &-img {
       @media (max-width: 640px) {
@@ -564,6 +604,7 @@ br {
   &__practices {
     &-title {
       text-align: left;
+      @include border-bottom;
     }
   }
   &__cases {

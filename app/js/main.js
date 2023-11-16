@@ -7,12 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const casesSwiper = new Swiper(".index-services__cases-swiper", {
     // Опции слайдера
-    // loop: true, // Бесконечная прокрутка
-    // autoplay: {
-    //   delay: 3000, // Время автопрокрутки в миллисекундах
-    // },
+    loop: true, // Бесконечная прокрутка
+    autoplay: {
+      delay: 3000, // Время автопрокрутки в миллисекундах
+    },
     // centeredSlides: true,
-    speed: 1,
     slidesPerView: 1,
     spaceBetween: 0,
     pagination: {
