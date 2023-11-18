@@ -70,11 +70,18 @@ function images() {
 }
 
 function scripts() {
-  return src(["app/js/main.js", "app/js/animations.js"])
-    .pipe(concat("main.min.js"))
-    .pipe(uglify())
-    .pipe(dest("app/js"))
-    .pipe(browserSync.stream());
+  return (
+    src([
+      "node_modules/swiper/swiper-bundle.min.js",
+      "node_modules/vivus/dist/vivus.js",
+      "app/js/main.js",
+      "app/js/animations.js",
+    ])
+      .pipe(concat("main.min.js"))
+      // .pipe(uglify())
+      .pipe(dest("app/js"))
+      .pipe(browserSync.stream())
+  );
 }
 
 function styles() {
@@ -98,6 +105,10 @@ function styles() {
     .pipe(browserSync.stream());
 }
 
+function swiperCSS() {
+  return src("node_modules/swiper/swiper-bundle.min.css").pipe(dest("app/css"));
+}
+
 function watching() {
   browserSync.init({
     server: {
@@ -119,10 +130,10 @@ function cleanDist() {
 function building() {
   return src(
     [
-      "app/css/style.min.css",
+      "app/css/*.*",
       "app/images/*.*",
-      "!app/images/*.svg",
-      "!app/images/stack",
+      // "!app/images/*.svg",
+      // "!app/images/stack",
       // "app/images/sprite.svg",
       "app/fonts/*.*",
       "app/js/main.min.js",
@@ -132,6 +143,7 @@ function building() {
   ).pipe(dest("dist"));
 }
 
+exports.swiperCSS = swiperCSS;
 exports.styles = styles;
 exports.images = images;
 exports.fonts = fonts;
@@ -141,5 +153,5 @@ exports.sprite = sprite;
 exports.scripts = scripts;
 exports.watching = watching;
 
-exports.build = series(cleanDist, building);
-exports.default = parallel(styles, scripts, pages, watching);
+exports.build = series(swiperCSS, styles, scripts, pages, cleanDist, building);
+exports.default = parallel(swiperCSS, styles, scripts, pages, watching);
