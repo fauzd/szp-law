@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-  document.querySelector(".header__burger").addEventListener("click", function () {
-    this.classList.toggle("open");
-    document.querySelector(".header__nav-list").classList.toggle("open");
-  });
+  //Обработка нажатия бургер меню
+  document
+    .querySelector(".header__burger")
+    .addEventListener("click", function () {
+      this.classList.toggle("open");
+      document.querySelector(".header__nav-list").classList.toggle("open");
+    });
 
   const casesSwiper = new Swiper(".index-services__cases-swiper", {
     // Опции слайдера
@@ -44,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: 2,
         spaceBetween: 40,
       },
-      760: {
+      960: {
         slidesPerView: 3,
         spaceBetween: 40,
       },
@@ -129,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
-  
+
   const lawyerPublications = new Swiper(".lawyer-publications__swiper", {
     // Опции слайдера
     loop: true, // Бесконечная прокрутка
@@ -187,5 +189,4 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
-
 });

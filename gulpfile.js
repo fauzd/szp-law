@@ -89,6 +89,7 @@ function styles() {
     "app/scss/lawyers-main.scss",
     "app/scss/blog-post.scss",
     "app/scss/blog.scss",
+    "app/scss/policy.scss",
   ])
     .pipe(autoprefixer({ overrideBrowserslist: ["last 10 version"] }))
     .pipe(concat("style.min.css"))
@@ -122,7 +123,7 @@ function building() {
       "app/images/*.*",
       "!app/images/*.svg",
       "!app/images/stack",
-      "app/images/sprite.svg",
+      // "app/images/sprite.svg",
       "app/fonts/*.*",
       "app/js/main.min.js",
       "app/*.html",

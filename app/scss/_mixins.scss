@@ -186,3 +186,20 @@
 @mixin border-bottom-dark {
   border-bottom: clamp(1px, 0.15625vw, 2px) solid $dark;
 }
+
+//Миксин для расчета и подстановки адаптивного отступа
+//Минимальное всегда 1рем, нужно ввести максимальное 
+//и т.к. нельзя перемножить rem и vw, то нужно 
+//руками вычислить адаптивное значение
+//макс отступ * размер rem / ширину экрана при макс отступе * 100%
+// пример: calc(4vw * 24 / 19.2)
+
+@mixin adaptive-padding($top-fixed, $bottom-fixed, $top-coef, $bottom-coef) {
+  $top-adaptive: clamp(1rem, #{$top-coef}, $top-fixed);
+  $bottom-adaptive: clamp(1rem, #{$bottom-coef}, $bottom-fixed);
+
+  padding-top: $top-fixed;
+  padding-top: $top-adaptive;
+  padding-bottom: $bottom-fixed;
+  padding-bottom: $bottom-adaptive;
+}

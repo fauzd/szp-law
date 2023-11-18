@@ -11,7 +11,7 @@
     }
     &-child:nth-child(2) {
       flex-grow: 0;
-      @media ( width < 1366px) {
+      @media (width < 1366px) {
         margin-left: 2rem;
       }
     }
@@ -65,7 +65,7 @@
     &-title {
       margin-top: 3rem;
       margin-top: clamp(1rem, 3.75vw, 3rem);
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
     &-value {
       margin-top: 0.25rem;
@@ -88,15 +88,27 @@
       }
     }
     &__decor {
-      display: flex;
-      align-items: center;
+      position: relative;
       @media (max-width: 640px) {
         display: none;
       }
+      &-img,
+      &-svg {
+        position: absolute;
+        object-fit: contain;
+        height: 100%;
+        width: auto;
+        right: 0;
+        top: 0;
+      }
       &-img {
         border-radius: 0 300px 300px 0;
-        height: auto;
-        width: 100%;
+        max-width: 100%;
+        z-index: 2;
+      }
+      &-svg {
+        max-width: 74%;
+        z-index: 3;
       }
     }
     &__list {

@@ -235,15 +235,6 @@
         @include about-swiper-descr;
         color: $accent;
       }
-      &-btn {
-        flex-grow: 0;
-        align-self: flex-start;
-        padding: 0 1.6rem;
-        border-radius: 0.5rem;
-        @include about-swiper-btn;
-        background: transparent;
-        border: 2px solid $accent;
-      }
     }
   }
 }

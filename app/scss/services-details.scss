@@ -83,6 +83,10 @@
     padding-top: clamp(1rem, 5vw, 4rem);
     padding-bottom: 6.25rem;
     padding-bottom: clamp(1rem, 8vw, 6.25rem);
+    &-container {
+      display: flex;
+  flex-direction: column;
+    }
     &-title {
       padding-bottom: 1rem;
       border-bottom: 2px solid $accent;
@@ -113,5 +117,10 @@
         color: $white;
       }
     }
+  }
+  &__btn-more {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    align-self: center;
   }
 }

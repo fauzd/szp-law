@@ -1,0 +1,25 @@
+.policy {
+  @include adaptive-padding(
+    3rem,
+    4rem,
+    calc(3vw * 24 / 19.2),
+    calc(4vw * 24 / 19.2)
+  );
+  &__title {
+    margin-bottom: 1rem;
+  }
+  p {
+    padding-bottom: 1rem;
+  }
+  strong,
+  h4 {
+    @include manropeBold;
+    padding: 2rem 0;
+  }
+  ul {
+    padding-left: 2rem;
+  }
+  li::marker {
+    content: "- ";
+  }
+}

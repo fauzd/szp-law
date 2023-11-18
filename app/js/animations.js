@@ -18,6 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
     new Vivus("about-decor-bg", { start: "inViewport", duration: 200 });
   }
 
+  if (document.getElementById("lawyer-cases__decor-svg")) {
+    new Vivus("lawyer-cases__decor-svg", {
+      start: "inViewport",
+      duration: 200,
+    });
+  }
+
   //Анимация скролла секции инфо на странице адвоката
   if (document.querySelector(".lawyer__info-wrapper")) {
     const screenWidth = window.innerWidth;
@@ -75,38 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "<"
     );
 
-  //Анимация заголовков
-  function animateHeader(header) {
-    gsap.fromTo(
-      header,
-      {
-        opacity: 0,
-        yPercent: 100,
-      },
-      {
-        duration: 1,
-        opacity: 1,
-        yPercent: 0,
-      }
-    );
-  }
-
-  document.querySelectorAll(".animate-title").forEach((header) => {
-    if (header.getBoundingClientRect().top < window.innerHeight) {
-      // Если заголовок уже видим при загрузке
-      animateHeader(header);
-    } else {
-      // Если заголовок появляется при скролле
-      ScrollTrigger.create({
-        trigger: header,
-        start: "top 70%",
-        onEnter: () => animateHeader(header),
-        once: true, // Триггер сработает только один раз
-      });
-    }
-  });
-
-  //Анимация списков
+    //Анимация списков
   function animateList(list) {
     gsap.fromTo(
       list.querySelectorAll(".practice-list__item"), // Анимируем каждый элемент списка,
@@ -170,9 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //Анимация параграфов
-  gsap.registerPlugin(ScrollTrigger);
-
-  function animateParagraphs(container) {
+  function animateText(container) {
     const paragraphs =
       container.tagName === "P" ? [container] : container.querySelectorAll("p");
     gsap.fromTo(
@@ -187,17 +161,40 @@ document.addEventListener("DOMContentLoaded", function () {
     .forEach((element) => {
       if (element.getBoundingClientRect().top < window.innerHeight) {
         // Если элемент уже видим при загрузке
-        animateParagraphs(element);
+        animateText(element);
       } else {
         // Если элемент появляется при скролле
         ScrollTrigger.create({
           trigger: element,
           start: "top 60%",
-          onEnter: () => animateParagraphs(element),
+          onEnter: () => animateText(element),
           once: true, // Триггер сработает только один раз
         });
       }
     });
 
+  //Общий случай анимации любого блока
+  function animateOpacity(container) {
+    
+    gsap.fromTo(
+      container,
+      { opacity: 0 },
+      { opacity: 1, duration: 1, delay: 1 }
+    );
+  }
+  document.querySelectorAll(".animate-opacity").forEach((element) => {
+    if (element.getBoundingClientRect().top < window.innerHeight) {
+      // Если элемент уже видим при загрузке
+      animateOpacity(element);
+    } else {
+      // Если элемент появляется при скролле
+      ScrollTrigger.create({
+        trigger: element,
+        start: "top 60%",
+        onEnter: () => animateOpacity(element),
+        once: true, // Триггер сработает только один раз
+      });
+    }
+  });
 
 });
