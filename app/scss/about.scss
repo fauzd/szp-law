@@ -97,7 +97,6 @@
     }
     &-item {
       opacity: 0;
-      
       $padding-left-max: 4rem;
       position: relative;
       padding-left: $padding-left-max;
@@ -190,7 +189,7 @@
     &__button {
       top: 55%;
       @media (max-width: 640px ) {
-        top: 35%;
+        top: 39%;
       }
       &-prev {
         left: -3rem;

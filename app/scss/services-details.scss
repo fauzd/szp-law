@@ -9,7 +9,6 @@
     border-bottom: 2px solid $accent;
     padding-bottom: 1.8rem;
     padding-bottom: clamp(1rem, 5vw, 1.8rem);
-
   }
   &__description {
     padding-bottom: 3rem;
@@ -70,7 +69,10 @@
       max-height: 98vh;
       max-width: 90vw;
       aspect-ratio: 697/754;
-  object-fit: cover;
+      object-fit: cover;
+      @media (max-width: 640px) {
+        object-fit: contain;
+      }
       &-wrapper {
         display: flex;
         justify-content: center;
@@ -85,7 +87,7 @@
     padding-bottom: clamp(1rem, 8vw, 6.25rem);
     &-container {
       display: flex;
-  flex-direction: column;
+      flex-direction: column;
     }
     &-title {
       padding-bottom: 1rem;
@@ -100,6 +102,9 @@
       align-items: stretch;
       &-child {
         flex: 1 1 calc(50% - 20px);
+      }
+      @media (max-width: 640px) {
+        flex-direction: column;
       }
     }
   }

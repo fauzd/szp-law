@@ -11,7 +11,7 @@
     }
     &-child:nth-child(2) {
       flex-grow: 0;
-      @media (width < 1366px) {
+      @media (min-width: 640px) and (max-width: 1366px) {
         margin-left: 2rem;
       }
     }
@@ -25,7 +25,7 @@
   }
   &__title-photo {
     border-radius: 13px;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     max-width: 667px;
     height: 100%;
@@ -119,4 +119,19 @@
       }
     }
   }
+  &-publications {
+    &__swiper {
+      &-button-prev,
+      &-button-next {
+        @media (max-width: 640px) {
+          top: 56%;
+        }
+      }
+    }
+    &__slide {
+      &-wrapper {
+      }
+    }
+  }
 }
+
