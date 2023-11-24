@@ -94,44 +94,44 @@ document.addEventListener("DOMContentLoaded", function () {
   const screenWidth = window.innerWidth;
   const breakpoint = 1000;
 
-  if (screenWidth < breakpoint) {
-    const recommendationsSwiper = new Swiper(".recommendations__swiper", {
-      spaceBetween: 100,
-      slideClass: "recommendations-slide",
-      loop: true,
-      slidesPerView: 3,
-      centeredSlides: false,
-      initialSlide: 5,
-      autoplay: {
-        delay: 1500,
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 60,
-        },
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 40,
-        },
-        760: {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
-        980: {
-          slidesPerView: 4,
-          spaceBetween: 40,
-        },
-      },
-    });
-  }
+  // if (screenWidth < breakpoint) {
+  //   const recommendationsSwiper = new Swiper(".recommendations__swiper", {
+  //     spaceBetween: 100,
+  //     slideClass: "recommendations-slide",
+  //     loop: true,
+  //     slidesPerView: 3,
+  //     centeredSlides: false,
+  //     initialSlide: 5,
+  //     autoplay: {
+  //       delay: 1500,
+  //     },
+  //     breakpoints: {
+  //       320: {
+  //         slidesPerView: 1,
+  //         spaceBetween: 60,
+  //       },
+  //       640: {
+  //         slidesPerView: 2,
+  //         spaceBetween: 40,
+  //       },
+  //       760: {
+  //         slidesPerView: 3,
+  //         spaceBetween: 40,
+  //       },
+  //       980: {
+  //         slidesPerView: 4,
+  //         spaceBetween: 40,
+  //       },
+  //     },
+  //   });
+  // }
 
   const lawyersMain = new Swiper(".lawyers__swiper", {
     loop: true, // Бесконечная прокрутка
     // autoplay: {
     //   delay: 3000, // Время автопрокрутки в миллисекундах
     // },
-    // centeredSlides: true,
+    centeredSlides: true,
     // spaceBetween: 20,
     navigation: {
       nextEl: ".lawyers__button-next",
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 60,
       },
       640: {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 40,
       },
     },
@@ -177,6 +177,22 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
+
+  // const blogTags = new Swiper(".blog__filter-swiper", {
+  //   // Опции слайдера
+  //   slidesPerView: "auto",
+  //   // spaceBetween: 20,
+  //   spaceBetween: 0,
+  //   loop: false, // Бесконечная прокрутка
+  //   // autoplay: {
+  //   //   delay: 3000, // Время автопрокрутки в миллисекундах
+  //   // },
+  //   // centeredSlides: true,
+  //   freeMode: {
+  //     enabled: true,
+  //     sticky: true,
+  //   },
+  // });
 
   const blogRecommendations = new Swiper(".blog-recommendations__swiper", {
     // Опции слайдера

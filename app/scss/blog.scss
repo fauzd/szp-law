@@ -1,10 +1,13 @@
 .blog {
   &-hero {
     position: relative;
-    height: 90vh;
+    height: $hero-img-height;
     @media (max-width: 640px) {
       height: auto;
     }
+  }
+  &__bg-img {
+    object-position: bottom;
   }
   &__content {
     min-height: 90vh;
@@ -19,33 +22,47 @@
   }
   &__title {
     @media (max-width: 640px) {
-      padding-bottom: .5rem;
+      padding-bottom: 0.5rem;
     }
     &-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 1rem;
-    @include border-bottom;
-    &-child {
-      flex: 1 1 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1rem;
+      @include border-bottom;
+      &-child {
+        flex: 1 1 50%;
+      }
+      @media (max-width: 640px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
-    @media (max-width: 640px) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
   }
   &__filter {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-    gap: clamp(.5rem, 1.25vw, 1rem);
+    gap: clamp(0.5rem, 1.25vw, 1rem);
+    flex-wrap: wrap;
+    @media (max-width: 640px) {
+      gap: .8rem;
+      justify-content: flex-start;
+    }
+    & > .swiper-slide {
+      width: auto;
+    }
+    &-swiper {
+      width: 100%;
+    }
     &-link {
       background: transparent;
       color: $dark;
-      @include border;
+      border: 1px solid $accent;
+      border-radius: 8px;
       white-space: nowrap;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
       &--active,
       &:hover {
         background-color: $accent;
@@ -56,29 +73,40 @@
         color: $dark;
       }
       @media (max-width: 640px) {
-      padding: .25rem .5rem;
-      font-size: .75rem;
-    }
-    }
-  }
-  &__swiper-wrapper {
-    display: flex;
-    padding-top: 2.5rem;
-    gap: 1rem;
-    @media (min-width: 641px) {
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
-      & > * {
-        flex: 1 1 max(300px, calc(33.33% - 1rem));
+        padding: 0.25rem 0.5rem;
+        @include main-text;
       }
     }
-    @media (max-width: 640px) {
-      flex-direction: column;
+  }
+  &__swiper {
+    &-wrapper {
+      display: flex;
+      padding-top: 2.5rem;
+      gap: 1rem;
+      @media (min-width: 641px) {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+        & > * {
+          flex: 1 1 max(300px, calc(33.33% - 1rem));
+        }
+      }
+      @media (max-width: 640px) {
+        flex-direction: column;
+      }
+    }
+  }
+  &__slide {
+    &-wrapper {
+      min-height: 220px;
+      min-height: clamp(200px, 17vw, 280px);
+    }
+    &-btn {
+      margin-top: auto;
     }
   }
   &__btn {
-    padding: .5rem 2rem;
+    padding: 0.5rem 2rem;
     margin-top: 4rem;
     margin-top: clamp(1rem, 5vw, 4rem);
     align-self: center;

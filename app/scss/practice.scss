@@ -1,14 +1,13 @@
 .practice {
   &-hero {
     position: relative;
-    height: 90vh;
+    height: $hero-img-height;
     @media (max-width: 640px) {
       height: auto;
     }
   }
   &-filter {
-    padding-top: 5rem;
-    padding-top: clamp(2rem, 7vw, 5rem);
+    padding-top: 1rem;
     padding-bottom: 5rem;
     padding-bottom: clamp(2rem, 5vw, 5rem);
     background-color: $white;
@@ -33,6 +32,11 @@
         border-bottom: 1px solid $accent;
       }
     }
+    &__link {
+      &--active {
+        color: $accent;
+      }
+    }
   }
 }
 
@@ -41,7 +45,7 @@
 }
 .case {
   padding: 1.5rem;
-  padding: clamp(.75rem, 4vw, 1.5rem);
+  padding: clamp(0.75rem, 4vw, 1.5rem);
   @include border;
   border-radius: 13px;
   background-color: $light;
@@ -55,22 +59,50 @@
   }
   &__number {
     margin-bottom: 0.8rem;
-    margin-bottom: clamp(.5rem, 2vw, .8rem);
+    margin-bottom: clamp(0.25rem, 1vw, 0.8rem);
   }
   &__title {
     @include border-bottom;
     padding-bottom: 1rem;
-    padding-bottom: clamp(.5rem, 1vw, 1rem);
+    padding-bottom: clamp(0.5rem, 1vw, 1rem);
     margin-bottom: 1rem;
-    margin-bottom: clamp(.5rem, 1vw, 1rem);
+    margin-bottom: clamp(0.5rem, 1vw, 1rem);
     @media (max-width: 640px) {
       font-size: 29px;
+      font-size: clamp(24px, 1vw, 29px);
       line-height: 100%;
       padding-bottom: 20px;
+      padding-bottom: clamp(.5rem, 1vw, 1rem);
+    }
+  }
+  &-metric {
+    &__name {
+      @include case-metric-name;
+      font-size: 0.9rem;
+      font-size: clamp(.7rem, .5vw, .9rem);
+      line-height: 1.8rem;
+      line-height: clamp(1rem, 1vw, 1.8rem);
+    }
+    &__value {
+      @include case-metric-value;
+      font-size: 1.2rem;
+      font-size: clamp(1rem, 1vw, 1.2rem);
+      line-height: 1.5rem;
+      line-height: clamp(1.2rem, 1vw, 1.5rem);
+      &--not-bold {
+        margin-top: 0.3rem;
+        margin-top: clamp(0.1rem, .5vw, 0.3rem);
+        font-weight: 400;
+        font-size: 0.9rem;
+        font-size: clamp(.7rem, .5vw, .9rem);
+        line-height: 130%;
+        line-height: clamp(1.2rem, 1vw, 1.5rem);
+      }
     }
   }
   &-details {
     &__content {
+      padding-top: .25rem;
       display: flex;
       justify-content: space-between;
       gap: 1rem;
@@ -87,26 +119,31 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 1rem;
-    }
-    &__description {
-      &-text {
-        @include case-main;
+      gap: clamp(.75rem, 1vw, 1rem);
+      @media (max-width: 640px) {
+        @include border-bottom;
+        padding-bottom: 1rem;
+        padding-bottom: clamp(.5rem, 1vw, 1rem);
       }
     }
-  }
-  &-metric {
-    &__name {
-      @include case-metric-name;
-      font-size: 1rem;
-      line-height: 2rem;
+    &__description {
+      &-title {
+        @include case-metric-name;
+        padding-bottom: 0.5rem;
+        color: $accent;
+        &:not(:first-child) {
+          padding-top: 0.5rem;
+        }
+      }
+      &-text {
+        @include case-main;
+        font-size: .8rem;
+        padding-bottom: 0.5rem;
+      }
     }
-    &__value {
-      @include case-metric-value;
-      font-size: 1.56rem;
-      line-height: 2rem;
-      &--not-bold {
-        font-weight: 400;
-        font-size: 1rem;
+    &-lawyer {
+      & > p {
+
       }
     }
   }

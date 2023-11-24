@@ -4,6 +4,9 @@
 @import "variables";
 @import "mixins";
 
+$header-height: 2.5rem;
+$hero-img-height: 45vh;
+
 html {
   box-sizing: border-box;
   background-color: $light;
@@ -35,7 +38,7 @@ button {
 }
 
 .container {
-  max-width: calc(1440px + 2rem);
+  max-width: calc(1200px + 2rem);
   margin: 0 auto;
   padding: 0 1rem;
   @media (max-width: 1000px) and (orientation: landscape) {
@@ -58,6 +61,18 @@ button {
 
 .text {
   @include main-text;
+  & > * {
+    padding-bottom: 0.5rem;
+  }
+  ul {
+    padding-left: 1rem;
+    li {
+      list-style-type: circle;
+      &:not(:last-child) {
+        padding-bottom: 0.25rem;
+      }
+    }
+  }
 }
 
 .animate-opacity {
@@ -65,7 +80,9 @@ button {
 }
 
 .animate-text {
-  opacity: 0;
+  & > p {
+    opacity: 0;
+  }
 }
 
 br {
@@ -75,8 +92,8 @@ br {
 .btn,
 .btn-light {
   @include btn;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  border-radius: 13px;
+  padding: 0.3rem 0.7rem;
   align-self: flex-start;
   @include border;
   transition: background 0.5s, color 0.5s;
@@ -112,10 +129,10 @@ br {
   &__container {
     position: relative;
     @include adaptive-padding(
+      3rem,
       4rem,
-      6.5rem,
-      calc(4vw * 24 / 19.2),
-      calc(6.5vw * 24 / 19.2)
+      calc(3vw * 24 / 19.2),
+      calc(4vw * 24 / 19.2)
     );
   }
   &__title {
@@ -137,10 +154,11 @@ br {
     border-radius: 50%;
     position: absolute;
     top: 55%;
+    transform: scale(0.8);
+    z-index: 1;
     @media (max-width: 616px) {
       top: 63%;
     }
-    transform: scale(0.8);
     &::after {
       content: "";
       background-image: url(../images/swiper-arrow.svg);
@@ -225,7 +243,7 @@ br {
   object-fit: cover;
   @media (max-width: 640px) {
     position: relative;
-    padding-top: 3.5rem;
+    padding-top: $header-height;
     object-position: left;
     height: auto;
     position: relative;
@@ -291,14 +309,15 @@ br {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    min-height: 330px;
-    min-height: clamp(220px, 20vw, 330px);
+    $min-height: 280px;
+    min-height: $min-height;
+    min-height: clamp(220px, 20vw, $min-height);
   }
   &-date {
     @include main-text-light;
     color: $dark;
     padding-bottom: 0.8rem;
-    @include border-bottom-dark;
+    @include border-bottom;
   }
   &-text {
     margin-top: 0.8rem;
@@ -306,6 +325,7 @@ br {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
+    @include main-text;
   }
   &-btn {
     margin-top: auto;
@@ -349,32 +369,37 @@ br {
   }
 }
 
+.logo {
+  width: 4.5rem;
+  height: 1.55rem;
+  @media (max-width: 640px) {
+    $scale: 1;
+    width: calc(4.5rem * $scale);
+    height: calc(1.55rem * $scale);
+  }
+}
+
 .header {
-  min-height: 3.5rem;
+  min-height: $header-height;
   background: rgba(0, 32, 31, 0.45);
   backdrop-filter: blur(0.5rem);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 12;
   display: flex;
   @media (max-width: 640px) {
-    background: #00201f;
+    background: rgb(0, 32, 31);
   }
   &-wo-img {
-    background: rgba(0, 32, 31, 1);
-    position: relative;
+    background: rgb(0, 32, 31);
   }
   &__container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  &__logo {
-    width: 4.5rem;
-    height: 1.55rem;
   }
   &__nav-list {
     display: flex;
@@ -402,6 +427,7 @@ br {
       display: flex;
       position: fixed;
       transform: translateY(0);
+      z-index: 12;
     }
   }
   &__link {
@@ -423,15 +449,15 @@ br {
     }
     &-phone {
       position: relative;
-      padding-left: 1.5rem;
-      padding-left: clamp(1rem, 4vw, 1.5rem);
+      padding-left: 1rem;
       &::before {
         background-image: url(../images/icon-phone.svg);
         background-size: contain;
-        width: 1.25rem;
-        width: clamp(0.8rem, 3vw, 1.25rem);
-        height: 1.25rem;
-        height: clamp(0.8rem, 3vw, 1.25rem);
+        $size: 0.75rem;
+        width: $size;
+        width: clamp(0.8rem, 3vw, $size);
+        height: $size;
+        height: clamp(0.8rem, 3vw, $size);
       }
       &::after {
         @media (max-width: 640px) {
@@ -449,17 +475,16 @@ br {
     }
     &-mail {
       position: relative;
-      padding-left: 1.625rem;
-      padding-left: clamp(1rem, 3vw, 1.625rem);
+      padding-left: 1.2rem;
       &::before {
         background-image: url(../images/icon-mail.svg);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
-        width: 1.3rem;
-        width: clamp(0.8rem, 3vw, 1.3rem);
-        height: 1rem;
-        height: clamp(0.62rem, 3vw, 1rem);
+        width: 0.975rem;
+        width: clamp(0.8rem, 3vw, 0.975rem);
+        height: 0.75rem;
+        height: clamp(0.62rem, 3vw, 0.75rem);
       }
     }
   }
@@ -489,7 +514,7 @@ br {
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 1;
+    z-index: 13;
     &-line {
       display: block;
       width: 100%;
@@ -595,7 +620,7 @@ br {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 63px;
+    padding-top: $header-height;
   }
   &__content-wrapper {
     display: flex;
@@ -626,30 +651,16 @@ br {
       }
     }
   }
-  &__subtitle {
-    @include hero-subtitle;
-    position: relative;
-    &::after {
-      content: "";
-      background-image: url(/images/hero-arrow.svg);
-      background-size: contain;
-      background-position: center center;
-      width: 1.625rem;
-      height: 1rem;
-      position: absolute;
-      top: 60%;
-      transform: translateY(-50%);
-      margin-left: 11px;
-    }
-  }
 }
 
 .index-services {
   background-color: $white;
-  padding-top: 4.75rem;
-  padding-top: clamp(1rem, 6vw, 4.75rem);
-  padding-bottom: 8rem;
-  padding-bottom: clamp(1rem, 10vw, 8rem);
+  @include adaptive-padding(
+    3rem,
+    4rem,
+    calc(3vw * 24 / 19.2),
+    calc(4vw * 24 / 19.2)
+  );
   overflow: hidden;
   @media (max-width: 1000px) and (orientation: landscape) {
     padding-top: 1rem;
@@ -695,7 +706,7 @@ br {
       &-title {
         @include cases-slide;
         color: $dark;
-        margin-bottom: 2.75rem;
+        margin-bottom: 2rem;
         @media (max-width: 1000px) and (orientation: landscape) {
           font-size: 2.5rem;
           margin-bottom: 1rem;
@@ -704,7 +715,7 @@ br {
       &-description {
         @include cases-description;
         color: $dark;
-        margin-bottom: 2.25rem;
+        margin-bottom: 2rem;
         width: 65%;
         hyphens: none;
         @media (max-width: 1000px) and (orientation: landscape) {
@@ -712,7 +723,7 @@ br {
         }
       }
       &-btn {
-        margin-bottom: 1.675rem;
+        margin-bottom: 1.5rem;
         align-self: center;
         color: $white;
       }
@@ -750,7 +761,7 @@ br {
   }
   &__swiper-button-prev,
   &__swiper-button-next {
-    top: 60%;
+    top: 55%;
   }
 }
 
@@ -758,7 +769,7 @@ br {
   padding-top: 2.2rem;
   padding-top: clamp(1rem, 3vw, 2.2rem);
   padding-bottom: 5rem;
-  padding-bottom: clamp(3rem, 7vw, 5rem);
+  padding-bottom: clamp(1rem, 7vw, 5rem);
   background-color: $accent;
   position: relative;
   display: flex;
@@ -788,35 +799,39 @@ br {
   }
   &__title {
     color: $light;
-    margin-bottom: 5.7rem;
-    margin-bottom: clamp(1rem, 7vw, 5.7rem);
+    margin-bottom: 3rem;
+    margin-bottom: clamp(1rem, 4vw, 3rem);
+    font-size: clamp(1rem, 2.5vw, 2rem);
   }
+  $gap: 1rem;
   &__content {
-    height: 6rem;
-    @media (max-width: 640px) {
-      height: 7.5rem;
-    }
-    position: relative;
     z-index: 1;
     display: flex;
     justify-content: space-between;
-  }
-  &__logo {
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $gap;
   }
   &-slide {
-    height: 5.5rem;
-    @media (max-width: 640px) {
-      height: auto;
-    }
+    flex: 1 1 calc(20% - $gap);
     display: flex;
-    align-items: center;
     justify-content: center;
-    @media (min-width: 1001px) {
-      width: auto;
+    align-items: center;
+    @media (max-width: 640px) {
+      flex: 1 1 calc(50% - $gap);
     }
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5) {
+      @media (max-width: 640px) {
+        flex: 1 1 calc(30% - $gap);
+      }
+    }
+  }
+  &__logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 4rem;
   }
 }
 
@@ -913,8 +928,7 @@ br {
     &-mail,
     &-location {
       position: relative;
-      padding-left: 1.625rem;
-      padding-left: clamp(1.2rem, 3vw, 1.625rem);
+      padding-left: 1.2rem;
       &::before {
         content: "";
         position: absolute;
@@ -928,10 +942,9 @@ br {
         background-image: url(../images/icon-phone.svg);
         background-size: contain;
         background-repeat: no-repeat;
-        width: 1.25rem;
-        width: clamp(0.8rem, 2vw, 1.25rem);
-        height: 1.25rem;
-        height: clamp(0.8rem, 2vw, 1.25rem);
+        $size: 0.8rem;
+        width: $size;
+        height: $size;
       }
     }
     &-mail {
@@ -939,10 +952,8 @@ br {
         background-image: url(../images/icon-mail.svg);
         background-size: contain;
         background-repeat: no-repeat;
-        width: 1.325rem;
-        width: clamp(0.85rem, 3vw, 1.325rem);
-        height: 0.975rem;
-        height: clamp(0.625rem, 3vw, 0.975rem);
+        width: 1rem;
+        height: 0.8rem;
       }
     }
     &-location {
@@ -950,10 +961,8 @@ br {
         background-image: url(../images/icon-location.svg);
         background-size: contain;
         background-repeat: no-repeat;
-        width: 1.085rem;
-        width: clamp(0.7rem, 3vw, 1.085rem);
-        height: 1.375rem;
-        height: clamp(0.88rem, 3vw, 1.375rem);
+        width: 0.75rem;
+        height: 1rem;
       }
     }
   }
@@ -962,10 +971,6 @@ br {
     justify-content: space-around;
     align-items: center;
     gap: 1rem;
-  }
-  &__logo {
-    width: 4.5rem;
-    height: 1.55rem;
   }
   &__decor {
     height: calc(6.5rem + 2px);

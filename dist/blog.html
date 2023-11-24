@@ -13,7 +13,7 @@
 
   <header class="header">
     <div class="container header__container">
-      <a href="/" class="header__logo-link"><img class="header__logo" src="images/logo-light.svg"></img></a>
+      <a href="/" class="header__logo-link"><img class="header__logo logo" src="images/logo-light.svg"></img></a>
       
       <div class="header__links">
         <ul class="header__nav-list">
@@ -58,17 +58,17 @@
 </section>
 <section class="blog__content">
   <div class="container blog__container">
-    <div class="blog__title-wrapper">
+    <div class="blog__title-wrapper ">
       <div class="blog__title title blog__title-wrapper-child">Блог</div>
-      <div class="blog__filter blog__title-wrapper-child">
-        <div class="blog__filter-item">
-          <a href="#" class="blog__filter-link btn">Обзоры</a>
+      <div class="blog__filter-swiper swiper">
+        <div class="blog__filter blog__title-wrapper-child swiper-wrapper">
+          <div class="swiper-slide"><a href="#" class="blog__filter-link btn">Обзоры</a></div>
+          <div class="swiper-slide"><a href="#"
+              class="blog__filter-link btn blog__filter-link--active">Новости компании</a></div>
+          <div class="swiper-slide"><a href="#" class="blog__filter-link btn">Рейтинги</a></div>
+          <div class="swiper-slide"><a href="#" class="blog__filter-link btn">Полезное</a></div>
+          <div class="swiper-slide"><a href="#" class="blog__filter-link btn">Дела</a></div>
         </div>
-        <div class="blog__filter-item">
-          <a href="#" class="blog__filter-link btn blog__filter-link--active">Новости</a>
-        </div>
-        <div class="blog__filter-item"><a href="#" class="blog__filter-link btn">Пресс-релизы</a></div>
-        <div class="blog__filter-item"><a href="#" class="blog__filter-link btn">Дата</a></div>
       </div>
     </div>
     <div class="blog__cards-wrapper">
@@ -177,7 +177,7 @@
       </div>
       <div class="footer__bottom">
         <a href="/" class="footer__logo-link">
-          <img src="images/logo-light.svg" alt="" class="footer__logo">
+          <img src="images/logo-light.svg" alt="" class="footer__logo logo">
         </a>
         <img src="images/footer-decor.svg" alt="" class="footer__decor">
         <div class="footer__credits">

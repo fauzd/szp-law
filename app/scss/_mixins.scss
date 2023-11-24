@@ -23,17 +23,9 @@
 @mixin hero-title {
   @include cormorantSC;
   font-size: 3.5rem;
-  font-size: clamp(3.5rem, 10vw, 5.5rem);
+  font-size: clamp(3rem, 10vw, 5.5rem);
   line-height: 5rem;
-  line-height: clamp(3rem, 7vw, 5rem);
-  color: $light;
-}
-
-@mixin hero-subtitle {
-  @include cormorant;
-  font-size: 2rem;
-  font-size: clamp(1.5rem, 7vw, 2rem);
-  line-height: 4rem;
+  line-height: clamp(2.5rem, 7vw, 5rem);
   color: $light;
 }
 
@@ -48,21 +40,30 @@
 
 @mixin title {
   @include cormorant;
-  font-size: 3rem;
-  font-size: clamp(2.5rem, 10vw, 3rem);
+  font-size: 2rem;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   line-height: 100%;
+}
+
+@mixin subtitle {
+  @include cormorant;
+  font-size: 1.5rem;
+  font-size: clamp(1rem, 5vw, 1.5rem);
+  line-height: 112%;
+  letter-spacing: -1.5%;
+  color: $accent;
 }
 
 @mixin services-list {
   @include manrope;
-  font-size: 1rem;
-  line-height: 1.3rem;
+  font-size: .8rem;
+  line-height: 1rem;
 }
 
 @mixin cases-slide {
   @include cormorant;
-  font-size: 2.6rem;
-  font-size: clamp(2.6rem, 10vw, 3.75rem);
+  font-size: 2rem;
+  font-size: clamp(2rem, 10vw, 3rem);
   line-height: 105%;
 }
 
@@ -74,16 +75,15 @@
 
 @mixin btn {
   @include manrope;
-  font-size: 1.25rem;
-  font-size: clamp(18px, 1.25vw, 24px);
+  font-size: .9rem;
   text-align: center;
   letter-spacing: -0.69%;
 }
 
 @mixin news-swiper {
   @include manrope;
-  font-size: 1rem;
-  line-height: 1.75rem;
+  font-size: .9rem;
+  line-height: 1.5rem;
 }
 
 @mixin credits {
@@ -95,8 +95,8 @@
 
 @mixin main-text {
   @include manrope;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: .8rem;
+  line-height: 1.25rem;
   letter-spacing: -.0175rem;
   color: $dark;
 }
@@ -111,19 +111,12 @@
 
 @mixin about-swiper-descr {
   @include manrope;
-  font-size: 1rem;
-  line-height: 1.75rem;
+  font-size: .9rem;
+  line-height: 1.3rem;
   letter-spacing: -.0175rem;
   color: $dark;
 }
 
-@mixin about-swiper-btn {
-  @include manrope;
-  font-size: 1rem;
-  line-height: 2rem;
-  letter-spacing: -.03rem;
-  color: $dark;
-}
 @mixin practice-filter-list {
   @include manrope;
   font-size: 1rem;
@@ -137,19 +130,13 @@
 @mixin case-main {
   @include manrope;
   font-size: 1rem;
+  font-size: clamp(.75rem, 1vw, 1rem);
   line-height: 1.5rem;
+  line-height: clamp(1rem, 1vw, 1.5rem);
   letter-spacing: -.0175rem;
   color: $dark;
 }
 
-@mixin subtitle {
-  @include cormorant;
-  font-size: 2rem;
-  font-size: clamp(1.5rem, 5vw, 2rem);
-  line-height: 112%;
-  letter-spacing: -1.5%;
-  color: $accent;
-}
 
 @mixin case-metric-name {
   @include manrope;

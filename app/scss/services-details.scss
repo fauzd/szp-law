@@ -1,9 +1,12 @@
 .services-details {
   min-height: 100vh;
-  padding-top: 4rem;
-  padding-top: clamp(4.5rem, 10vw, 4rem);
+  $padding-top: $header-height;
+  padding-top: $header-height;
+  padding-top: calc(1rem + $header-height);
   &__about {
-    padding-bottom: 3rem;
+    $padding-bottom: 2rem;
+    padding-bottom: $padding-bottom;
+    padding-bottom: clamp(1rem, 2.5vw, $padding-bottom);
   }
   &__title {
     border-bottom: 2px solid $accent;
@@ -11,11 +14,10 @@
     padding-bottom: clamp(1rem, 5vw, 1.8rem);
   }
   &__description {
-    padding-bottom: 3rem;
     &-wrapper {
       display: flex;
       gap: 4rem;
-      gap: clamp(1rem, 10vw, 4rem);
+      gap: clamp(1rem, 5vw, 4rem);
       flex-wrap: wrap;
     }
     &-column {
@@ -44,13 +46,18 @@
     padding-top: clamp(1rem, 5vw, 3rem);
     &-wrapper {
       display: flex;
-      gap: 3rem;
-      gap: clamp(1rem, 5vw, 3rem);
+      $gap-fixed: 3rem;
+      $gap-adaptive: clamp(1rem, 5vw, $gap-fixed);
+      gap: $gap-fixed;
+      gap: $gap-adaptive;
       flex-wrap: wrap;
       padding-bottom: 3.875rem;
       padding-bottom: clamp(1rem, 5vw, 3.875rem);
       &-child {
-        flex: 1 1 200px;
+        flex: 1 1 calc(50% - $gap-fixed);
+        @media (max-width: 640px) {
+          flex: 1 1 100%;
+        }
       }
     }
     &-title {
@@ -66,13 +73,10 @@
     }
     &-photo {
       border-radius: 13px;
-      max-height: 98vh;
-      max-width: 90vw;
+      max-width: 100%;
       aspect-ratio: 697/754;
       object-fit: cover;
-      @media (max-width: 640px) {
-        object-fit: contain;
-      }
+      object-position: top;
       &-wrapper {
         display: flex;
         justify-content: center;
@@ -124,8 +128,8 @@
     }
   }
   &__btn-more {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 2rem;
+    margin-top: clamp(2rem, 5vw, 4rem);
     align-self: center;
   }
 }

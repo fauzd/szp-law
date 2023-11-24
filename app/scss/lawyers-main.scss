@@ -1,15 +1,19 @@
 .lawyers {
   padding-top: 3rem;
-  padding-bottom: 5rem;
+  padding-bottom: 4rem;
+  padding-bottom: clamp(1rem, 5vw, 4rem);
   &__title {
     padding-bottom: 1.375rem;
+    padding-bottom: clamp(.5rem, 1.25vw, 1.375rem);
     border-bottom: 2px solid $accent;
   }
   &__description {
     padding-top: 1.375rem;
+    padding-top: clamp(.5rem, 1.25vw, 1.375rem);
   }
   &__cards-wrapper {
-    padding-top: 3.75rem;
+    padding-top: 2rem;
+    padding-top: clamp(0.1rem, 2vw, 2rem);
     position: relative;
   }
   &__swiper {
@@ -21,17 +25,28 @@
   &__slide {
     &-content {
       display: flex;
+      align-items: center;
       flex-direction: column;
       gap: 1rem;
       overflow: hidden;
+      min-height: clamp(420px, 65vw ,680px);
+      @media (max-width: 640px) {
+        height: auto;
+      }
     }
     &-img {
       border-radius: 13px;
-      max-width: 667px;
+      $kef: 0.7;
+      max-width: calc(667px * $kef);
+      max-height: calc(784px * $kef);
       @media (max-width: 640px) {
         width: 70vw;
         margin: 0 auto;
       }
+    }
+    &-btn {
+      margin-top: auto;
+      align-self: center;
     }
   }
   &__btn-wrapper {
@@ -50,8 +65,20 @@
   }
   &__button-prev {
     left: 0;
+    @media (max-width: 370px) {
+      left: -0.5rem;
+    }
+    @media (max-width: 280px) {
+      left: -0.75rem;
+    }
   }
   &__button-next {
     right: 0;
+    @media (max-width: 370px) {
+      right: -0.5rem;
+    }
+    @media (max-width: 280px) {
+      right: -0.75rem;
+    }
   }
 }
