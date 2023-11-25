@@ -4,53 +4,75 @@
   padding-bottom: clamp(1rem, 5vw, 4rem);
   &__title {
     padding-bottom: 1.375rem;
-    padding-bottom: clamp(.5rem, 1.25vw, 1.375rem);
+    padding-bottom: clamp(0.5rem, 1.25vw, 1.375rem);
     border-bottom: 2px solid $accent;
   }
   &__description {
     padding-top: 1.375rem;
-    padding-top: clamp(.5rem, 1.25vw, 1.375rem);
+    padding-top: clamp(0.5rem, 1.25vw, 1.375rem);
     @media (min-width: 641px) {
       columns: 2;
-    column-gap: 2rem;
+      column-gap: 2rem;
     }
   }
   &__cards-wrapper {
     padding-top: 2rem;
     padding-top: clamp(0.1rem, 2vw, 2rem);
     position: relative;
-  }
-  &__swiper {
-    width: 80%;
-    @media (max-width: 640px) {
-      width: 100%;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
   }
   &__slide {
+    flex: 1 1 calc(50% - 2rem);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    min-height: 210px;
+    min-width: 330px;
+    @media (max-width: 360px) {
+       flex-direction: column;
+       align-items: flex-start;
+       min-width: 100%;
+      }
+    &-content,
+    &-img-wrapper {
+      flex: 1 1 calc(50% - 1rem);
+    }
     &-content {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
+      justify-content: center;
       flex-direction: column;
       gap: 1rem;
-      overflow: hidden;
-      min-height: clamp(420px, 65vw ,680px);
-      @media (max-width: 640px) {
-        height: auto;
-      }
     }
     &-img {
-      border-radius: 13px;
-      $kef: 0.7;
-      max-width: calc(667px * $kef);
-      max-height: calc(784px * $kef);
-      @media (max-width: 640px) {
-        width: 70vw;
-        margin: 0 auto;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 667 / 784;
+      object-fit: cover;
+      object-position: top;
+      transform: scale(1.6);
+      transform-origin: 60% top;
+      &-wrapper {
+        $kef: 0.4;
+        max-width: calc(667px * $kef);
+        max-height: calc(784px * $kef);
+        overflow: hidden;
+        border-radius: 13px;
+        @media (max-width: 641px) {
+          max-width: 100%;
+          max-height: 100%;
+        }
       }
+    }
+    &-name {
+      @include subtitle;
+      color: $dark;
     }
     &-btn {
       margin-top: auto;
-      align-self: center;
     }
   }
   &__btn-wrapper {
