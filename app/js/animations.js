@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.fromTo(
       container,
       { opacity: 0 },
-      { opacity: 1, duration: 1, delay: 1 }
+      { opacity: 1, duration: 1, delay: .1 }
     );
   }
   document.querySelectorAll(".animate-opacity").forEach((element) => {

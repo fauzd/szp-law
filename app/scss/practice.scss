@@ -75,31 +75,6 @@
       padding-bottom: clamp(.5rem, 1vw, 1rem);
     }
   }
-  &-metric {
-    &__name {
-      @include case-metric-name;
-      font-size: 0.9rem;
-      font-size: clamp(.7rem, .5vw, .9rem);
-      line-height: 1.8rem;
-      line-height: clamp(1rem, 1vw, 1.8rem);
-    }
-    &__value {
-      @include case-metric-value;
-      font-size: 1.2rem;
-      font-size: clamp(1rem, 1vw, 1.2rem);
-      line-height: 1.5rem;
-      line-height: clamp(1.2rem, 1vw, 1.5rem);
-      &--not-bold {
-        margin-top: 0.3rem;
-        margin-top: clamp(0.1rem, .5vw, 0.3rem);
-        font-weight: 400;
-        font-size: 0.9rem;
-        font-size: clamp(.7rem, .5vw, .9rem);
-        line-height: 130%;
-        line-height: clamp(1.2rem, 1vw, 1.5rem);
-      }
-    }
-  }
   &-details {
     &__content {
       padding-top: .25rem;

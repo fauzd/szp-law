@@ -21,7 +21,7 @@
   }
   &__title {
     padding: 1rem 0;
-    padding: clamp(.5rem, 1vw, 1rem) 0;
+    padding: clamp(0.5rem, 1vw, 1rem) 0;
     &-wrapper {
       display: flex;
       justify-content: space-between;
@@ -30,9 +30,10 @@
     }
     &-tag {
       align-self: center;
+      font-size: .8rem ;
       @media (max-width: 640px) {
-        font-size: .6rem;
-      border-radius: .35rem;
+        font-size: 0.6rem;
+        border-radius: 0.35rem;
       }
     }
   }
@@ -40,18 +41,15 @@
     &-wrapper {
       margin-top: 4rem;
       margin-top: clamp(1rem, 5vw, 4rem);
-      max-width: 95vw;
+      max-width: 600px;
+      align-self: center;
     }
     $gap-size: 1rem;
     &-top {
       display: flex;
+      flex-direction: column;
       gap: $gap-size;
-      flex-wrap: wrap;
       max-width: 100%;
-      &-child {
-        flex: 1 1 calc(50% - ($gap-size / 2));
-        min-width: 200px;
-      }
     }
     &-img {
       border-radius: 13px;

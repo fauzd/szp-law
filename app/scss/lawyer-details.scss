@@ -100,6 +100,8 @@
     }
     &__decor {
       position: relative;
+      min-height: 300px;
+      min-height: clamp(100px, calc(1920vw / 300), 300px);
       @media (max-width: 640px) {
         display: none;
       }
